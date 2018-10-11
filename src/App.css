@@ -1,26 +1,35 @@
-.App {
-  text-align: center;
+
+.wrapper{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
+
+.wrapper0 {
+  display: flex;
+  justify-content: center;
 }
 
-.App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
+header {
+  display: flex;
+  justify-content: center;
+  background-color: blue;
+  width: 100%;
+  margin: 0 auto;
+}
+
+iframe {
+  width: 80%;
+  margin: 0 auto;
+}
+
+form {
+  margin: 0 auto;
+  padding-top: 40px;
+}
+
+h1 {
   color: white;
+  font-family: 'Chakra Petch', sans-serif;
 }
-
-.App-intro {
-  font-size: large;
-}
-
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
-}
-
-

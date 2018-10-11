@@ -9,9 +9,19 @@ constructor(props){
     giphyname: '',
     giphyimage: '',
     search: '',
+    loading: true
   }
   this.fetchAPI = this.fetchAPI.bind(this);
 }
+
+onLoad(){
+setTimeout(() => {
+  this.setState(prevState => ({
+loading: false
+  }))
+}, 3000)
+}
+
 
 fetchAPI(res) {
   let search = res;
@@ -23,7 +33,9 @@ fetchAPI(res) {
       this.setState(prevState => ({
         giphyname: res.data[0].title,
         giphyimage: res.data[0].embed_url,
+        loading: true
       }))
+    this.onLoad()
       })
 
     }
@@ -34,16 +46,28 @@ handleSubmit(e){
 
 
 render() {
+  if(this.state.isLoading) {
+    return (
+      <h3>Loading Please Wait</h3>
+      )
+  }
+
   let image = this.state.giphyimage
   console.log(image)
     return (
-      <div>
+
+      <div className = "wrapper0">
+
+      <div className = "wrapper">
+        <header>
         <h1>Giphy Creator</h1>
+        </header>
        <Form
         fetchAPI = {this.fetchAPI}
        />
       <h1> {this.state.giphyname}</h1>
       <iframe src={ image } title = "title"/>
+      </div>
       </div>
     );
   }
