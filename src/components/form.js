@@ -9,8 +9,8 @@ constructor(props){
 
 handleSubmit(e){
   e.preventDefault();
-  let res = this.state.search;
-  this.props.fetchAPI(res);
+  let search = this.state.search;
+  this.props.fetchAPI(search);
 
 }
 

@@ -23,10 +23,8 @@ loading: false
 }
 
 
-fetchAPI(res) {
-  let search = res;
+fetchAPI(search) {
   let url = `https://api.giphy.com/v1/gifs/search?api_key=tt59MI4q4zQA4P24YXAQEN6iL7GQq3EN&q=${search}&limit=25&offset=0&rating=G&lang=en`
-
   fetch(url)
     .then( res => res.json())
     .then( res =>{
